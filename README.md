@@ -6,7 +6,7 @@
 
 This repo solves the problem of binance opbnb chain sync.
 
-Tools are provided for both user and maintainer to reduce the sync time approximately from ~20 hours to ~1 hour.
+Tools are provided for both user and maintainer to reduce the sync time approximately.
 
 The tools can be configured easily to split upload and download a large snapshot file with multiple service providers.
 
@@ -62,7 +62,7 @@ https://github.com/meson-network/opbnb_snapshot/releases/download/v1.0.6/opbnb_s
   
 
 ```text
-./opbnb_snapshot download --file_config=https://pub-51a999999b804ea79dd5bce1cb10c4e4.r2.dev/geth-20230907/files.json
+./opbnb_snapshot download --file_config=https://pub-b4d3a86bb863422c8f2276c7bf10cedd.r2.dev/geth-20230920/files.json
 ```
 
   
