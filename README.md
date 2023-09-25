@@ -36,7 +36,7 @@ Comparison with other download utils:
 * Linux 64bit
 
 ```text
-wget -O opbnb_snapshot "https://github.com/meson-network/opbnb_snapshot/releases/download/v1.0.6/opbnb_snapshot_linux_amd64" && chmod +x ./opbnb_snapshot
+wget -O opbnb_snapshot "https://github.com/meson-network/opbnb_snapshot/releases/download/v1.0.7/opbnb_snapshot_linux_amd64" && chmod +x ./opbnb_snapshot
 ```
 
   
@@ -44,7 +44,7 @@ wget -O opbnb_snapshot "https://github.com/meson-network/opbnb_snapshot/releases
 * Mac 64bit
 
 ```text
-wget -O opbnb_snapshot "https://github.com/meson-network/opbnb_snapshot/releases/download/v1.0.6/opbnb_snapshot_darwin" && chmod +x ./opbnb_snapshot
+wget -O opbnb_snapshot "https://github.com/meson-network/opbnb_snapshot/releases/download/v1.0.7/opbnb_snapshot_darwin" && chmod +x ./opbnb_snapshot
 ```
 
   
@@ -52,7 +52,7 @@ wget -O opbnb_snapshot "https://github.com/meson-network/opbnb_snapshot/releases
 * Windows 64bit
 
 ```text
-https://github.com/meson-network/opbnb_snapshot/releases/download/v1.0.6/opbnb_snapshot.exe
+https://github.com/meson-network/opbnb_snapshot/releases/download/v1.0.7/opbnb_snapshot.exe
 ```
 
   
