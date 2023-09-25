@@ -1,6 +1,6 @@
 # opbnb Snapshot
 
-[![CodeFactor](https://www.codefactor.io/repository/github/meson-network/bsc_snapshot/badge)](https://www.codefactor.io/repository/github/meson-network/bsc_snapshot)
+[![CodeFactor](https://www.codefactor.io/repository/github/meson-network/opbnb_snapshot/badge)](https://www.codefactor.io/repository/github/meson-network/opbnb_snapshot)
 [![GitHub](https://img.shields.io/github/license/meson-network/opbnb_snapshot)](https://github.com/meson-network/opbnb_snapshot/blob/main/LICENSE)
 ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/NetworkMeson)
 
