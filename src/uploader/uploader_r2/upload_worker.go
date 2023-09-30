@@ -21,7 +21,7 @@ type UploaderWorker struct {
 	bar             *mpb.Bar
 }
 
-func NewUploadWorker(client *s3.Client, bucketName string, additional_path string,
+func newUploadWorker(client *s3.Client, bucketName string, additional_path string,
 	fileName string, localFileMd5 string, bar *mpb.Bar) *UploaderWorker {
 
 	return &UploaderWorker{
@@ -30,7 +30,7 @@ func NewUploadWorker(client *s3.Client, bucketName string, additional_path strin
 	}
 }
 
-func (u *UploaderWorker) UploadFile(localFilePath string) error {
+func (u *UploaderWorker) uploadFile(localFilePath string) error {
 
 	keyInRemote := u.fileName
 	if u.additional_path != "" {

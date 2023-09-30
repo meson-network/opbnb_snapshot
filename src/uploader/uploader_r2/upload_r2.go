@@ -1,4 +1,4 @@
-package uploader
+package uploader_r2
 
 import (
 	"errors"
@@ -15,7 +15,6 @@ import (
 
 	"github.com/meson-network/opbnb_snapshot/src/config"
 	"github.com/meson-network/opbnb_snapshot/src/model"
-	"github.com/meson-network/opbnb_snapshot/src/uploader/uploader_r2"
 )
 
 const (
@@ -42,7 +41,7 @@ func Upload_r2(originDir string, thread int, bucketName string, additional_path 
 		return err
 	}
 
-	client, err := uploader_r2.GenR2Client(accountId, accessKeyId, accessKeySecret)
+	client, err := genR2Client(accountId, accessKeyId, accessKeySecret)
 	if err != nil {
 		fmt.Println("[ERROR] gen r2 client err:", err)
 		return err
@@ -107,7 +106,7 @@ func upload_file(originDir string, thread int, retryTimes int, fileConfig *model
 
 			bar.SetPriority(math.MaxInt - len(fileList) + int(c))
 
-			uploadWorker := uploader_r2.NewUploadWorker(client, bucketName, additional_path, fileInfo.FileName, fileInfo.Md5, bar)
+			uploadWorker := newUploadWorker(client, bucketName, additional_path, fileInfo.FileName, fileInfo.Md5, bar)
 
 			// try some times if upload failed
 			for try := 0; try < retryTimes; try++ {
@@ -115,7 +114,7 @@ func upload_file(originDir string, thread int, retryTimes int, fileConfig *model
 
 				localFilePath := filepath.Join(originDir, fileInfo.FileName)
 
-				err := uploadWorker.UploadFile(localFilePath)
+				err := uploadWorker.uploadFile(localFilePath)
 				if err != nil {
 					if try < retryTimes-1 {
 						time.Sleep(3 * time.Second)
@@ -176,10 +175,10 @@ func upload_config(originDir string, client *s3.Client, bucketName string, addit
 		),
 	)
 
-	uploadWorker := uploader_r2.NewUploadWorker(client, bucketName, additional_path, fileName, "", bar)
+	uploadWorker := newUploadWorker(client, bucketName, additional_path, fileName, "", bar)
 
 	localFilePath := filepath.Join(fileDir, fileName)
-	err := uploadWorker.UploadFile(localFilePath)
+	err := uploadWorker.uploadFile(localFilePath)
 
 	progressBar.Wait()
 	if err != nil {

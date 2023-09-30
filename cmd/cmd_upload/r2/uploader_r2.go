@@ -1,4 +1,4 @@
-package cmd_upload
+package r2
 
 import (
 	"fmt"
@@ -7,16 +7,16 @@ import (
 
 	"github.com/meson-network/opbnb_snapshot/basic"
 	"github.com/meson-network/opbnb_snapshot/basic/color"
-	"github.com/meson-network/opbnb_snapshot/src/uploader"
+	"github.com/meson-network/opbnb_snapshot/src/uploader/uploader_r2"
 )
 
-func Uploader(clictx *cli.Context) error {
+func Uploader_r2(clictx *cli.Context) error {
 
 	fmt.Println(color.Green(basic.Logo))
 
 	originDir, thread, bucketName, additional_path,
 		accountId, accessKeyId, accessKeySecret, retry_times := ReadParam(clictx)
 
-	return uploader.Upload_r2(originDir, thread, bucketName, additional_path,
+	return uploader_r2.Upload_r2(originDir, thread, bucketName, additional_path,
 		accountId, accessKeyId, accessKeySecret, retry_times)
 }

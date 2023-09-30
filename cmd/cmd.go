@@ -3,12 +3,12 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/urfave/cli/v2"
-
 	"github.com/meson-network/opbnb_snapshot/cmd/cmd_download"
 	"github.com/meson-network/opbnb_snapshot/cmd/cmd_endpoint"
 	"github.com/meson-network/opbnb_snapshot/cmd/cmd_split"
-	"github.com/meson-network/opbnb_snapshot/cmd/cmd_upload"
+	"github.com/meson-network/opbnb_snapshot/cmd/cmd_upload/greenfield"
+	"github.com/meson-network/opbnb_snapshot/cmd/cmd_upload/r2"
+	"github.com/urfave/cli/v2"
 )
 
 func ConfigCmd() *cli.App {
@@ -43,10 +43,19 @@ func ConfigCmd() *cli.App {
 				Subcommands: []*cli.Command{
 					{
 						Name:  "r2",
-						Flags: cmd_upload.GetFlags(),
+						Flags: r2.GetFlags(),
 						Usage: "upload to cloudflare R2 storage",
 						Action: func(clictx *cli.Context) error {
-							cmd_upload.Uploader(clictx)
+							r2.Uploader_r2(clictx)
+							return nil
+						},
+					},
+					{
+						Name:  "greenfield",
+						Flags: greenfield.GetFlags(),
+						Usage: "upload to Greenfield storage",
+						Action: func(clictx *cli.Context) error {
+							greenfield.Uploader_greenfield(clictx)
 							return nil
 						},
 					},

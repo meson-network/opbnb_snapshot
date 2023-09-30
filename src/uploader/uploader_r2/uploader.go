@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 )
 
-func GenR2Client(accountId string, accessKeyId string, accessKeySecret string) (*s3.Client, error) {
+func genR2Client(accountId string, accessKeyId string, accessKeySecret string) (*s3.Client, error) {
 	r2Resolver := aws.EndpointResolverWithOptionsFunc(func(service, region string, options ...interface{}) (aws.Endpoint, error) {
 		return aws.Endpoint{
 			URL: fmt.Sprintf("https://%s.r2.cloudflarestorage.com", accountId),
