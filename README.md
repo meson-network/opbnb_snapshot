@@ -333,3 +333,38 @@ param description:
     --thread            // <optional> thread quantity. default is 5
     --retry_times       // <optional> retry times limit when some file upload failed. default is 5
 ```
+
+#### Upload to BNB Greenfield 
+
+
+Uploading files to BNB Greenfield, make sure you have enough tokens to cover storage and transfer costs on greenfield. You must provide the `private key` of your wallet, and the `rpc address` and `chain id` from the  [greenfield documentation](https://docs.bnbchain.org/greenfield-docs/docs/guide/home).
+  
+
+```text
+ ./opbnb_snapshot upload greenfield \
+    --dir=<chunked file dir path> \
+    --bucket_name=<bucket name> \
+    --additional_path=<dir name> \
+    --private_key=<wallet private key> \
+    --rpc_addr=<rpc address>  \
+    --chain_id=<chain id> \
+    --thread=<thread quantity>  \
+    --retry_times=<retry times>
+```
+
+  
+
+param description:
+
+  
+
+```text
+    --dir               // <required> dir path to upload
+    --bucket_name       // <required> bucket name in r2
+    --additional_path   // <optional> dir name in bucket. default is "", means in bucket root dir
+    --private_key       // <required> wallet private key
+    --rpc_addr          // <required> rpc address
+    --chain_id          // <required> chain id
+    --thread            // <optional> thread quantity. default is 5
+    --retry_times       // <optional> retry times limit when some file upload failed. default is 5
+```
