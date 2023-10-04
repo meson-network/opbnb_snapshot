@@ -338,6 +338,8 @@ param description:
 
 
 Uploading files to BNB Greenfield, make sure you have enough tokens to cover storage and transfer costs on greenfield. You must provide the `private key` of your wallet, and the `rpc address` and `chain id` from the  [greenfield documentation](https://docs.bnbchain.org/greenfield-docs/docs/guide/home).
+
+Please create your bucket on greenfield first
   
 
 ```text
@@ -360,7 +362,7 @@ param description:
 
 ```text
     --dir               // <required> dir path to upload
-    --bucket_name       // <required> bucket name in r2
+    --bucket_name       // <required> bucket name in greenfield
     --additional_path   // <optional> dir name in bucket. default is "", means in bucket root dir
     --private_key       // <required> wallet private key
     --rpc_addr          // <required> rpc address
